@@ -38,21 +38,22 @@ public class Videojuego extends Producto implements Prestable {
 
     // Implementación interfaz prestable
     @Override
-    public void prestar (Usuario u){
+    public void prestar(Usuario u) {
         // No se puede prestar si ya está prestado
         if (prestado) throw new IllegalStateException("El videojuego ya esta prestado");
 
-        this.prestado= true;
-        this.prestadoA= u;
+        this.prestado = true;
+        this.prestadoA = u;
     }
 
     @Override
-    public void devolver(){
-        this.prestado=false;
-        this.prestadoA= null;
+    public void devolver() {
+        this.prestado = false;
+        this.prestadoA = null;
     }
+
     @Override
-    public boolean estaPrestado (){
+    public boolean estaPrestado() {
         return this.prestado;
     }
 
